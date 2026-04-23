@@ -1,6 +1,8 @@
 <script lang="ts">
   import { page } from "$app/stores";
 
+  let { toggleSidebar } = $props();
+
   const isActive = (path: string) => {
     const currentPath = $page.url.pathname;
     if (path === "/") return currentPath === "/";
@@ -20,7 +22,7 @@
   </div>
 
   <div class="right-section">
-    <div class="search-bar">
+    <div class="search-bar desktop-only">
       <span class="material-symbols-outlined">search</span>
       <input type="text" placeholder="Artists, songs, or podcasts" />
     </div>
@@ -38,6 +40,18 @@
           alt="Profile"
         />
       </div>
+      <!-- svelte-ignore a11y_consider_explicit_label -->
+      <button
+        class="mobile-menu mobile-only"
+        onpointerdown={(e) => {
+          toggleSidebar();
+        }}
+        aria-label="Open Menu"
+      >
+        <div class="line top"></div>
+        <div class="line mid"></div>
+        <div class="line bot"></div>
+      </button>
     </div>
   </div>
 </nav>
@@ -52,10 +66,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 2rem;
+    padding: 0 1.5rem;
     background: rgba(14, 14, 19, 0.7);
     backdrop-filter: blur(20px);
     z-index: 90;
+
+    @media (min-width: 1024px) {
+      padding: 0 2rem;
+    }
 
     .left-section {
       display: flex;
@@ -71,8 +89,12 @@
       }
 
       .nav-links {
-        display: flex;
+        display: none;
         gap: 2rem;
+
+        @media (min-width: 1024px) {
+          display: flex;
+        }
 
         a {
           text-decoration: none;
@@ -90,7 +112,6 @@
 
           &.active {
             border-bottom: 2px solid #81ecff;
-            padding-bottom: 4px;
           }
         }
       }
@@ -99,16 +120,24 @@
     .right-section {
       display: flex;
       align-items: center;
-      gap: 1.5rem;
+      gap: 1rem;
+
+      @media (min-width: 1024px) {
+        gap: 1.5rem;
+      }
 
       .search-bar {
-        display: flex;
-        align-items: center;
-        background: rgba(37, 37, 45, 0.5);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        padding: 0.5rem 1rem;
-        border-radius: 9999px;
-        width: 300px;
+        display: none;
+
+        @media (min-width: 1024px) {
+          display: flex;
+          align-items: center;
+          background: rgba(37, 37, 45, 0.5);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          padding: 0.5rem 1rem;
+          border-radius: 9999px;
+          width: 300px;
+        }
 
         span {
           font-size: 1.2rem;
@@ -123,7 +152,6 @@
           color: #f9f5fd;
           font-size: 0.85rem;
           width: 100%;
-
           &::placeholder {
             color: #64748b;
           }
@@ -133,17 +161,24 @@
       .actions {
         display: flex;
         align-items: center;
-        gap: 1rem;
+        gap: 0.75rem;
+
+        @media (min-width: 1024px) {
+          gap: 1rem;
+        }
 
         .icon-btn {
           background: transparent;
           border: none;
           color: #94a3b8;
           cursor: pointer;
-          transition: color 0.2s;
+          display: flex;
+          align-items: center;
 
-          &:hover {
-            color: #81ecff;
+          &.settings-btn {
+            @media (max-width: 393px) {
+              display: none;
+            }
           }
         }
 
@@ -153,11 +188,43 @@
           border-radius: 50%;
           overflow: hidden;
           border: 1px solid rgba(129, 236, 255, 0.3);
-
           img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+          }
+        }
+
+        .mobile-menu {
+          display: flex;
+          flex-direction: column;
+          background: none;
+          border: none;
+          gap: 5px;
+          padding: 8px;
+          cursor: pointer;
+          margin-left: 0.5rem;
+
+          @media (min-width: 1024px) {
+            display: none;
+          }
+
+          .line {
+            background-color: #81ecff;
+            width: 22px;
+            height: 2px;
+            border-radius: 99px;
+            transition: all 0.3s ease;
+          }
+
+          .mid {
+            width: 16px;
+            align-self: flex-end;
+          }
+
+          &:active .line {
+            background-color: white;
+            transform: scaleX(1.1);
           }
         }
       }

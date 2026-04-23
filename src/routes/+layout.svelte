@@ -5,6 +5,9 @@
     import Topbar from '$lib/components/Topbar.svelte';
 
     let { children } = $props();
+    let sidebarOpen = $state(false);
+
+    const toggleSidebar = () => (sidebarOpen = !sidebarOpen);
 </script>
 
 <svelte:head>
@@ -13,10 +16,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
 </svelte:head>
 
-<Topbar />
+<Topbar {toggleSidebar}/>
 
 <div class="app-layout">
-    <Sidebar activeRoute={page.url.pathname} />
+    <Sidebar activeRoute={page.url.pathname} isOpen={sidebarOpen}/>
 
     <main class="main-content">
         {@render children()}
