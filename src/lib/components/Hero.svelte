@@ -37,10 +37,16 @@
     min-height: 70vh;
     display: flex;
     align-items: center;
-    padding: 0 4rem;
+    padding: 2rem;
     overflow: hidden;
-    border-radius: 2rem;
-    margin: 1rem;
+    border-radius: 1.5rem;
+    margin: 0.5rem;
+
+    @media (min-width: 1024px) {
+      padding: 0 4rem;
+      border-radius: 2rem;
+      margin: 1rem;
+    }
 
     .background-wrap {
       position: absolute;
@@ -65,10 +71,19 @@
             rgba(14, 14, 19, 0.4) 50%,
             transparent 100%
           );
+
+          @media (min-width: 1024px) {
+            background: linear-gradient(
+              to right,
+              #0e0e13 10%,
+              rgba(14, 14, 19, 0.4) 50%,
+              transparent 100%
+            );
+          }
         }
 
         &.vertical {
-          background: linear-gradient(to top, #0e0e13 5%, transparent 50%);
+          background: linear-gradient(to top, #0e0e13 40%, transparent 90%);
         }
       }
     }
@@ -77,6 +92,10 @@
       position: relative;
       z-index: 10;
       max-width: 600px;
+
+      @media (min-width: 1024px) {
+        margin-top: 0;
+      }
 
       .badge {
         background: #ff51fa;
@@ -93,11 +112,11 @@
 
       h1 {
         font-family: "Space Grotesk", sans-serif;
-        font-size: clamp(4rem, 8vw, 6rem);
+        font-size: clamp(2.5rem, 10vw, 6rem);
         font-weight: 900;
-        line-height: 0.9;
+        line-height: 1;
         letter-spacing: -0.04em;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
 
         .accent {
           color: #81ecff;
@@ -106,26 +125,41 @@
       }
 
       p {
-        font-size: 1.25rem;
+        font-size: 1rem;
         color: #cbd5e1;
         font-weight: 300;
         line-height: 1.6;
         margin-bottom: 2rem;
+
+        @media (min-width: 1024px) {
+          font-size: 1.25rem;
+        }
       }
 
       .actions {
         display: flex;
+        flex-direction: column;
         gap: 1rem;
 
+        @media (min-width: 640px) {
+          flex-direction: row;
+        }
+
         button {
-          padding: 1rem 2rem;
+          padding: 1rem 1.5rem;
           border-radius: 99px;
           font-weight: bold;
+          width: 100%;
+          justify-content: center;
           font-family: "Space Grotesk", sans-serif;
           cursor: pointer;
           transition:
             transform 0.2s,
             box-shadow 0.2s;
+
+          @media (min-width: 640px) {
+            width: auto;
+          }
 
           &.btn-primary {
             background: #00e3fd;
