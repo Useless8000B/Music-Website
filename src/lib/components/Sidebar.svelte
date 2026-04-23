@@ -1,13 +1,27 @@
-<script>
+<script lang="ts">
+  import { page } from "$app/stores";
+
+  interface MenuItem {
+    icon: string;
+    label: string;
+    path: string;
+  }
+
   let { activeRoute = '/' } = $props();
 
-  const menuItems = [
+  const menuItems: MenuItem[] = [
     { icon: 'home', label: 'Home', path: '/' },
-    { icon: 'bolt', label: 'Trending', path: '/trending' },
+    { icon: 'bolt', label: 'Trending', path: '/#trending-now' },
     { icon: 'radio', label: 'Radio', path: '/radio' },
     { icon: 'grid_view', label: 'Genres', path: '/genres' },
     { icon: 'new_releases', label: 'New Releases', path: '/new-releases' }
   ];
+
+  const isActive = (path: string) => {
+    if (path === '/') return $page.url.pathname === '/' && !$page.url.hash;
+    if (path.includes('#')) return $page.url.hash === '#trending-now';
+    return $page.url.pathname === path;
+  };
 </script>
 
 <aside class="sidebar">
@@ -18,7 +32,7 @@
 
   <nav class="nav-menu">
     {#each menuItems as item}
-      <a href={item.path} class="nav-link" class:active={activeRoute === item.path}>
+      <a href={item.path} class="nav-link" class:active={isActive(item.path)}>
         <span class="material-symbols-outlined">{item.icon}</span>
         <span class="link-text">{item.label}</span>
       </a>
