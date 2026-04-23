@@ -1,8 +1,8 @@
 <section class="hero">
   <div class="background-wrap">
-    <img 
-      src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?q=80&w=2070&auto=format&fit=crop" 
-      alt="Featured Artist" 
+    <img
+      src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?q=80&w=2070&auto=format&fit=crop"
+      alt="Featured Artist"
     />
     <div class="gradient-overlay horizontal"></div>
     <div class="gradient-overlay vertical"></div>
@@ -10,14 +10,14 @@
 
   <div class="content">
     <span class="badge">Artist of the month</span>
-    
+
     <h1>
-      KAIROS <br/>
+      KAIROS <br />
       <span class="accent">STORM</span>
     </h1>
-    
+
     <p>
-      Experience the visceral energy of 'Midnight Echoes' — the chart-topping 
+      Experience the visceral energy of 'Midnight Echoes' — the chart-topping
       album that redefines cinematic synth-pop.
     </p>
 
@@ -26,9 +26,7 @@
         <span class="material-symbols-outlined">play_arrow</span>
         PLAY LATEST ALBUM
       </button>
-      <button class="btn-outline">
-        FOLLOW ARTIST
-      </button>
+      <button class="btn-outline"> FOLLOW ARTIST </button>
     </div>
   </div>
 </section>
@@ -59,11 +57,16 @@
       .gradient-overlay {
         position: absolute;
         inset: 0;
-        
+
         &.horizontal {
-          background: linear-gradient(to right, #0e0e13 10%, rgba(14, 14, 19, 0.4) 50%, transparent 100%);
+          background: linear-gradient(
+            to right,
+            #0e0e13 10%,
+            rgba(14, 14, 19, 0.4) 50%,
+            transparent 100%
+          );
         }
-        
+
         &.vertical {
           background: linear-gradient(to top, #0e0e13 5%, transparent 50%);
         }
@@ -89,7 +92,7 @@
       }
 
       h1 {
-        font-family: 'Space Grotesk', sans-serif;
+        font-family: "Space Grotesk", sans-serif;
         font-size: clamp(4rem, 8vw, 6rem);
         font-weight: 900;
         line-height: 0.9;
@@ -118,9 +121,11 @@
           padding: 1rem 2rem;
           border-radius: 99px;
           font-weight: bold;
-          font-family: 'Space Grotesk', sans-serif;
+          font-family: "Space Grotesk", sans-serif;
           cursor: pointer;
-          transition: transform 0.2s, box-shadow 0.2s;
+          transition:
+            transform 0.2s,
+            box-shadow 0.2s;
 
           &.btn-primary {
             background: #00e3fd;

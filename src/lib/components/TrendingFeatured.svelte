@@ -1,5 +1,5 @@
 <script lang="ts">
-	let { children } = $props()
+	let { children } = $props();
 </script>
 
 <section class="trending-section" id="trending-now">
@@ -9,14 +9,17 @@
 			<h2>Trending Now</h2>
 		</div>
 		<a href="/" class="view-charts">
-			View Global Charts 
+			View Global Charts
 			<span class="material-symbols-outlined">trending_up</span>
 		</a>
 	</div>
 
 	<div class="bento-grid">
 		<div class="featured-card group">
-			<img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=2070&auto=format&fit=crop" alt="Viral Hits" />
+			<img
+				src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=2070&auto=format&fit=crop"
+				alt="Viral Hits"
+			/>
 			<div class="overlay"></div>
 			<div class="content">
 				<h3>Viral 50: Tokyo</h3>
@@ -37,7 +40,7 @@
 	.trending-section {
 		scroll-margin-top: 100px;
 		padding: 4rem;
-		
+
 		.header {
 			display: flex;
 			justify-content: space-between;
@@ -50,12 +53,12 @@
 				font-size: 0.75rem;
 				font-weight: 800;
 				letter-spacing: 0.2em;
-				font-family: 'Space Grotesk';
+				font-family: "Space Grotesk";
 			}
 
 			h2 {
 				font-size: 2.5rem;
-				font-family: 'Space Grotesk';
+				font-family: "Space Grotesk";
 				font-weight: 800;
 			}
 
@@ -67,7 +70,9 @@
 				align-items: center;
 				gap: 0.5rem;
 				transition: transform 0.2s;
-				&:hover { transform: translateX(5px); }
+				&:hover {
+					transform: translateX(5px);
+				}
 			}
 		}
 	}
@@ -91,12 +96,18 @@
 			transition: transform 0.5s;
 		}
 
-		&:hover img { transform: scale(1.05); }
+		&:hover img {
+			transform: scale(1.05);
+		}
 
 		.overlay {
 			position: absolute;
 			inset: 0;
-			background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+			background: linear-gradient(
+				to top,
+				rgba(0, 0, 0, 0.9),
+				transparent
+			);
 		}
 
 		.content {
@@ -105,8 +116,16 @@
 			left: 0;
 			padding: 2rem;
 
-			h3 { font-size: 2rem; font-family: 'Space Grotesk'; font-weight: 900; }
-			p { color: #cbd5e1; margin-bottom: 1rem; font-size: 0.9rem; }
+			h3 {
+				font-size: 2rem;
+				font-family: "Space Grotesk";
+				font-weight: 900;
+			}
+			p {
+				color: #cbd5e1;
+				margin-bottom: 1rem;
+				font-size: 0.9rem;
+			}
 		}
 	}
 
@@ -124,8 +143,10 @@
 		opacity: 0;
 		transform: translateY(10px);
 		transition: all 0.3s;
-		
-		span { font-variation-settings: 'FILL' 1; }
+
+		span {
+			font-variation-settings: "FILL" 1;
+		}
 	}
 
 	.featured-card:hover .play-btn {
@@ -140,6 +161,8 @@
 	}
 
 	@media (max-width: 1024px) {
-		.bento-grid { grid-template-columns: 1fr; }
+		.bento-grid {
+			grid-template-columns: 1fr;
+		}
 	}
 </style>

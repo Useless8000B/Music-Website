@@ -4,7 +4,7 @@
 		artist: string;
 		cover: string;
 		date?: string;
-		type: 'single' | 'album';
+		type: "single" | "album";
 	}
 
 	let { title, artist, cover, date, type }: Props = $props();
@@ -33,15 +33,23 @@
 
 		&:hover {
 			transform: translateY(-4px);
-			.play-overlay { opacity: 1; transform: translateY(0); }
+			.play-overlay {
+				opacity: 1;
+				transform: translateY(0);
+			}
 		}
 
 		.image-container {
 			position: relative;
 			overflow: hidden;
 			background: #19191f;
-			
-			img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				transition: transform 0.5s ease;
+			}
 		}
 
 		/* Estilo específico para Singles (Aspecto Video/Retangular) */
@@ -69,14 +77,29 @@
 			transform: translateY(10px);
 			transition: all 0.3s ease;
 			display: flex;
-			box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+			box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
 		}
 
 		.metadata {
 			margin-top: 1rem;
-			h4 { font-weight: 700; margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-			.artist { color: #acaab1; font-size: 0.875rem; margin: 0.25rem 0; }
-			.date { font-size: 0.65rem; color: #76747b; text-transform: uppercase; letter-spacing: 0.05em; }
+			h4 {
+				font-weight: 700;
+				margin: 0;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+			.artist {
+				color: #acaab1;
+				font-size: 0.875rem;
+				margin: 0.25rem 0;
+			}
+			.date {
+				font-size: 0.65rem;
+				color: #76747b;
+				text-transform: uppercase;
+				letter-spacing: 0.05em;
+			}
 		}
 	}
 </style>

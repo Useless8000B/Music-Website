@@ -57,7 +57,9 @@
 			transition: opacity 0.3s;
 		}
 
-		&:hover .play-overlay { opacity: 1; }
+		&:hover .play-overlay {
+			opacity: 1;
+		}
 
 		.play-btn {
 			width: 3.5rem;
@@ -72,13 +74,18 @@
 			transform: translateY(1rem);
 			transition: transform 0.3s;
 
-			span { font-variation-settings: 'FILL' 1; font-size: 2rem; }
+			span {
+				font-variation-settings: "FILL" 1;
+				font-size: 2rem;
+			}
 		}
 
-		&:hover .play-btn { transform: translateY(0); }
+		&:hover .play-btn {
+			transform: translateY(0);
+		}
 
 		h4 {
-			font-family: 'Space Grotesk';
+			font-family: "Space Grotesk";
 			font-weight: 700;
 			font-size: 1.125rem;
 			white-space: nowrap;
@@ -88,7 +95,9 @@
 			transition: color 0.3s;
 		}
 
-		&:hover h4 { color: #81ecff; }
+		&:hover h4 {
+			color: #81ecff;
+		}
 
 		p {
 			font-size: 0.875rem;

@@ -27,7 +27,9 @@
 		transition: background 0.3s;
 		cursor: pointer;
 
-		&:hover { background: #25252d; }
+		&:hover {
+			background: #25252d;
+		}
 
 		.img-container {
 			position: relative;
@@ -37,32 +39,49 @@
 			overflow: hidden;
 			flex-shrink: 0;
 
-			img { width: 100%; height: 100%; object-fit: cover; }
-			
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+
 			.hover-play {
 				position: absolute;
 				inset: 0;
-				background: rgba(0,0,0,0.5);
+				background: rgba(0, 0, 0, 0.5);
 				display: flex;
 				align-items: center;
 				justify-content: center;
 				opacity: 0;
 				transition: opacity 0.2s;
-				span { color: white; font-variation-settings: 'FILL' 1; }
+				span {
+					color: white;
+					font-variation-settings: "FILL" 1;
+				}
 			}
 		}
 
-		&:hover .hover-play { opacity: 1; }
+		&:hover .hover-play {
+			opacity: 1;
+		}
 
 		.info {
 			flex: 1;
-			h4 { margin: 0; font-family: 'Space Grotesk'; font-weight: 700; }
-			p { margin: 0; font-size: 0.75rem; color: #94a3b8; }
+			h4 {
+				margin: 0;
+				font-family: "Space Grotesk";
+				font-weight: 700;
+			}
+			p {
+				margin: 0;
+				font-size: 0.75rem;
+				color: #94a3b8;
+			}
 		}
 
 		.rank {
 			color: #81ecff;
-			font-family: 'Space Grotesk';
+			font-family: "Space Grotesk";
 			font-weight: 800;
 			font-size: 0.8rem;
 		}

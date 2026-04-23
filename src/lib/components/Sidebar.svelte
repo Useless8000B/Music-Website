@@ -7,19 +7,19 @@
     path: string;
   }
 
-  let { activeRoute = '/' } = $props();
+  let { activeRoute = "/" } = $props();
 
   const menuItems: MenuItem[] = [
-    { icon: 'home', label: 'Home', path: '/' },
-    { icon: 'bolt', label: 'Trending', path: '/#trending-now' },
-    { icon: 'radio', label: 'Radio', path: '/radio' },
-    { icon: 'grid_view', label: 'Genres', path: '/genres' },
-    { icon: 'new_releases', label: 'New Releases', path: '/new-releases' }
+    { icon: "home", label: "Home", path: "/" },
+    { icon: "bolt", label: "Trending", path: "/#trending-now" },
+    { icon: "radio", label: "Radio", path: "/radio" },
+    { icon: "grid_view", label: "Genres", path: "/genres" },
+    { icon: "new_releases", label: "New Releases", path: "/new-releases" },
   ];
 
   const isActive = (path: string) => {
-    if (path === '/') return $page.url.pathname === '/' && !$page.url.hash;
-    if (path.includes('#')) return $page.url.hash === '#trending-now';
+    if (path === "/") return $page.url.pathname === "/" && !$page.url.hash;
+    if (path.includes("#")) return $page.url.hash === "#trending-now";
     return $page.url.pathname === path;
   };
 </script>
@@ -55,7 +55,7 @@
       margin-bottom: 2rem;
 
       .brand-title {
-        font-family: 'Space Grotesk', sans-serif;
+        font-family: "Space Grotesk", sans-serif;
         font-size: 1.25rem;
         font-weight: 900;
         color: #81ecff;
@@ -82,7 +82,7 @@
         padding: 0.75rem 1rem;
         text-decoration: none;
         color: #64748b;
-        font-family: 'Space Grotesk', sans-serif;
+        font-family: "Space Grotesk", sans-serif;
         font-weight: 700;
         transition: all 0.3s ease;
 

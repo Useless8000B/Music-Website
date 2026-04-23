@@ -12,7 +12,11 @@
 
 <div class="queue-item {active ? 'active' : ''} group">
 	<div class="cover-box">
-		<img src={cover} alt={title} class={active ? 'grayscale-0' : 'grayscale group-hover:grayscale-0'} />
+		<img
+			src={cover}
+			alt={title}
+			class={active ? "grayscale-0" : "grayscale group-hover:grayscale-0"}
+		/>
 		{#if active}
 			<div class="playing-bars">
 				<div class="bar bar-1"></div>
@@ -56,21 +60,42 @@
 			overflow: hidden;
 			flex-shrink: 0;
 
-			img { width: 100%; height: 100%; object-fit: cover; transition: all 0.5s; }
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				transition: all 0.5s;
+			}
 		}
 
 		.info {
 			flex: 1;
 			overflow: hidden;
-			.title { font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin: 0; }
-			.artist { font-size: 0.75rem; color: #acaab1; margin: 0; }
+			.title {
+				font-weight: 700;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				margin: 0;
+			}
+			.artist {
+				font-size: 0.75rem;
+				color: #acaab1;
+				margin: 0;
+			}
 		}
 
-		&.active .artist { color: #81ecff; font-weight: 500; }
+		&.active .artist {
+			color: #81ecff;
+			font-weight: 500;
+		}
 
-		.time { font-size: 0.75rem; color: #76747b; font-family: monospace; }
+		.time {
+			font-size: 0.75rem;
+			color: #76747b;
+			font-family: monospace;
+		}
 
-		/* Animação das barrinhas de áudio */
 		.playing-bars {
 			position: absolute;
 			inset: 0;
@@ -79,16 +104,34 @@
 			align-items: center;
 			justify-content: center;
 			gap: 2px;
-			
-			.bar { width: 3px; background: #81ecff; border-radius: 10px; animation: bounce 0.8s ease-in-out infinite alternate; }
-			.bar-1 { height: 10px; animation-delay: 0.1s; }
-			.bar-2 { height: 16px; animation-delay: 0.3s; }
-			.bar-3 { height: 8px; animation-delay: 0.2s; }
+
+			.bar {
+				width: 3px;
+				background: #81ecff;
+				border-radius: 10px;
+				animation: bounce 0.8s ease-in-out infinite alternate;
+			}
+			.bar-1 {
+				height: 10px;
+				animation-delay: 0.1s;
+			}
+			.bar-2 {
+				height: 16px;
+				animation-delay: 0.3s;
+			}
+			.bar-3 {
+				height: 8px;
+				animation-delay: 0.2s;
+			}
 		}
 	}
 
 	@keyframes bounce {
-		from { transform: scaleY(0.5); }
-		to { transform: scaleY(1.2); }
+		from {
+			transform: scaleY(0.5);
+		}
+		to {
+			transform: scaleY(1.2);
+		}
 	}
 </style>
