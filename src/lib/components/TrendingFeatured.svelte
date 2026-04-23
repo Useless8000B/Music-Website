@@ -39,13 +39,25 @@
 <style lang="scss">
 	.trending-section {
 		scroll-margin-top: 100px;
-		padding: 4rem;
+		padding: 1.5rem;
+
+		@media (min-width: 1024px) {
+            padding: 4rem;
+        }
 
 		.header {
 			display: flex;
+			flex-direction: column;
 			justify-content: space-between;
-			align-items: flex-end;
-			margin-bottom: 2.5rem;
+			align-items: flex-start;
+			gap: 1rem;
+			margin-bottom: 2rem;
+
+			@media (min-width: 640px) {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-end;
+            }
 
 			.tagline {
 				color: #81ecff;
@@ -57,9 +69,10 @@
 			}
 
 			h2 {
-				font-size: 2.5rem;
+				font-size: 1.75rem;
 				font-family: "Space Grotesk";
 				font-weight: 800;
+				@media (min-width: 1024px) { font-size: 2.5rem; }
 			}
 
 			.view-charts {
@@ -79,15 +92,23 @@
 
 	.bento-grid {
 		display: grid;
-		grid-template-columns: 2fr 1.5fr;
+		grid-template-columns: 1fr;
 		gap: 1.5rem;
+
+		@media (min-width: 1024px) {
+            grid-template-columns: 2fr 1.5fr;
+        }
 	}
 
 	.featured-card {
 		position: relative;
 		border-radius: 1.5rem;
 		overflow: hidden;
-		aspect-ratio: 16 / 9;
+		aspect-ratio: 1 / 1;
+
+		@media (min-width: 1024px) {
+            aspect-ratio: 16 / 9;
+        }
 
 		img {
 			width: 100%;
@@ -114,12 +135,13 @@
 			position: absolute;
 			bottom: 0;
 			left: 0;
-			padding: 2rem;
+			padding: 1.5rem;
 
 			h3 {
-				font-size: 2rem;
+				font-size: 1.5rem;
 				font-family: "Space Grotesk";
 				font-weight: 900;
+				@media (min-width: 1024px) { font-size: 2rem; }
 			}
 			p {
 				color: #cbd5e1;
@@ -140,9 +162,14 @@
 		align-items: center;
 		justify-content: center;
 		cursor: pointer;
-		opacity: 0;
-		transform: translateY(10px);
+		opacity: 1;
+		transform: translateY(0);
 		transition: all 0.3s;
+
+		@media (min-width: 1024px) {
+            opacity: 0;
+            transform: translateY(10px);
+        }
 
 		span {
 			font-variation-settings: "FILL" 1;
@@ -157,7 +184,7 @@
 	.track-list {
 		display: flex;
 		flex-direction: column;
-		gap: 1rem;
+		gap: 0.75rem;
 	}
 
 	@media (max-width: 1024px) {
