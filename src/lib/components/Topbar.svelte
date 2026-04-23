@@ -1,15 +1,21 @@
 <script lang="ts">
-  let { } = $props();
+  import { page } from "$app/stores";
+
+  const isActive = (path: string) => {
+    const currentPath = $page.url.pathname;
+    if (path === "/") return currentPath === "/";
+    return currentPath.startsWith(path);
+  };
 </script>
 
 <nav class="topbar">
   <div class="left-section">
     <span class="logo">Sonic Pulse</span>
-    
+
     <div class="nav-links">
-      <a href="/" class="active">Explore</a>
-      <a href="/library">Library</a>
-      <a href="/live">Live</a>
+      <a href="/" class:active={isActive("/")}>Explore</a>
+      <a href="/library" class:active={isActive("/library")}>Library</a>
+      <a href="/live" class:active={isActive("/live")}>Live</a>
     </div>
   </div>
 
@@ -27,7 +33,10 @@
         <span class="material-symbols-outlined">settings</span>
       </button>
       <div class="profile-pic">
-        <img src="https://ui-avatars.com/api/?name=User&background=81ecff&color=004d57" alt="Profile" />
+        <img
+          src="https://ui-avatars.com/api/?name=User&background=81ecff&color=004d57"
+          alt="Profile"
+        />
       </div>
     </div>
   </div>
@@ -36,7 +45,7 @@
 <style lang="scss">
   .topbar {
     position: fixed;
-	width: 100%;
+    width: 100%;
     top: 0;
     left: 0;
     height: 72px;
@@ -54,7 +63,7 @@
       gap: 3rem;
 
       .logo {
-        font-family: 'Space Grotesk', sans-serif;
+        font-family: "Space Grotesk", sans-serif;
         font-size: 1.5rem;
         font-weight: bold;
         color: #81ecff;
@@ -68,11 +77,14 @@
         a {
           text-decoration: none;
           color: #94a3b8;
-          font-family: 'Space Grotesk', sans-serif;
+          font-family: "Space Grotesk", sans-serif;
           font-weight: 500;
           transition: color 0.2s;
+          border-bottom: 2px solid transparent;
+          padding-bottom: 4px;
 
-          &:hover, &.active {
+          &:hover,
+          &.active {
             color: #81ecff;
           }
 
