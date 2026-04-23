@@ -30,30 +30,19 @@
     .release-card {
         cursor: pointer;
         display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
         transition: transform 0.3s ease;
-
-        @media (min-width: 1024px) {
-            flex-direction: column;
-            align-items: flex-start;
-        }
 
         .image-container {
             position: relative;
             flex-shrink: 0;
             overflow: hidden;
             background: #19191f;
-            width: 64px;
-            height: 64px;
-            border-radius: 0.5rem;
-
-            @media (min-width: 1024px) {
-                width: 100%;
-                height: auto;
-                border-radius: 1rem;
-            }
+            width: 100%;
+            height: auto;
+            border-radius: 1rem;
 
             img {
                 width: 100%;
@@ -63,34 +52,26 @@
         }
 
         &.single .image-container {
-            @media (min-width: 1024px) {
-                aspect-ratio: 16 / 9;
-            }
+            aspect-ratio: 16 / 9;
         }
 
         &.album .image-container {
-            @media (min-width: 1024px) {
-                aspect-ratio: 1 / 1;
-            }
+            aspect-ratio: 1 / 1;
         }
 
         .play-overlay {
-            display: none;
-
-            @media (min-width: 1024px) {
-                display: flex;
-                position: absolute;
-                bottom: 0.75rem;
-                right: 0.75rem;
-                background: #81ecff;
-                color: #003840;
-                border: none;
-                padding: 0.5rem;
-                border-radius: 50%;
-                opacity: 0;
-                transform: translateY(10px);
-                transition: all 0.3s ease;
-            }
+            display: flex;
+            position: absolute;
+            bottom: 0.75rem;
+            right: 0.75rem;
+            background: #81ecff;
+            color: #003840;
+            border: none;
+            padding: 0.5rem;
+            border-radius: 50%;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
         }
 
         @media (hover: hover) {
@@ -105,6 +86,7 @@
         .metadata {
             flex: 1;
             min-width: 0;
+            width: 100%;
 
             h4 {
                 font-size: 0.9rem;
