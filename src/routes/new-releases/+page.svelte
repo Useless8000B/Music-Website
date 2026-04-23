@@ -100,4 +100,27 @@
 		h3 { font-size: 2rem; font-family: 'Space Grotesk'; margin: 0; }
 		a { color: #81ecff; font-weight: 700; text-decoration: none; font-size: 0.875rem; }
 	}
+
+	@media (max-width: 768px) {
+		.content-wrapper { padding: 1rem; }
+		.hero {
+			padding: 2rem;
+			height: auto;
+			min-height: 400px;
+			margin-bottom: 2rem;
+			h2 { font-size: 3rem; margin: 0.5rem 0; }
+			.artist-name { font-size: 1.25rem; margin-bottom: 1.5rem; }
+			.btn-group { flex-direction: column; width: 100%; }
+			.btn-primary, .btn-secondary { width: 100%; text-align: center; }
+		}
+		.section-header {
+			margin-bottom: 1rem;
+			h3 { font-size: 1.5rem; }
+		}
+		.horizontal-scroll .item { min-width: 250px; }
+		.album-grid {
+			grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+			gap: 1rem;
+		}
+	}
 </style>
