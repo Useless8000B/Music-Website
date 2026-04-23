@@ -32,12 +32,12 @@
         background-color: #0e0e13;
         color: #f9f5fd;
         font-family: 'Manrope', sans-serif;
-        overflow-x: hidden;
+        overflow: hidden;
     }
 
     .app-layout {
         display: flex;
-        min-height: 100vh;
+        height: 100vh;
         padding-top: 72px; 
     }
 
@@ -45,6 +45,8 @@
         flex: 1;
         margin-left: 256px; 
         position: relative;
+        overflow-y: auto;
+        height: calc(100vh - 72px);
     }
 
     @media (max-width: 768px) {
