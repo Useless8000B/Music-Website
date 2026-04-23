@@ -35,6 +35,7 @@
 
 <style lang="scss">
 	.trending-section {
+		scroll-margin-top: 100px;
 		padding: 4rem;
 		
 		.header {
